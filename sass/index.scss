@@ -1,36 +1,80 @@
 @import "theme1";
 @import "theme2";
-@import "theme3"
-
-button{
-    font-size: 2rem;
-    margin: .1em;
-    ;
-    display: inline-block;
-
+@import "theme3";
+$ff-primary: 'Raleway', sans-serif;
+$fw:700;
+*,
+*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-height: 100%;
 }
+html,body{
+ max-height: 100%;
+}
+
+body{
+    font-family:$ff-primary ;
+    background-color: $main-background;
+}
+
 .section__button{
     display: grid;
-    grid-template-columns: repeat(4,100px);
+    grid-template-columns: 25rem;
+    grid-template-areas:
+            "header"
+            "input"
+            "cantainer--button" ;
     margin: 0 auto;
-    max-width: 70%;
+
+
     grid-gap: 1em;
-  
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+
+
+
+}
+@media (max-width:416px){
+    .section__button{
+        width: 10rem;
+    }
+}
+
+.header{
+    grid-area: header;
+    margin: 0;
 }
 input {
     font-size: 2rem;
     margin-bottom: .1em;
-    
+    grid-area: input;
+    border:none;
+    border-radius: .5em;
+    height: 2em;
+    padding: 1em;
+    background-color: $screen-background;
+    outline: none;
+    text-align: right;
+    color: $text-light;
+    transition:all 200ms ease-in-out;
+
+    &:hover{
+        background:rgba(24,32,52,.8);
+
+    }
+    &:focus{
+        outline:2px solid;
+
+    }
+
 }
 .section__display{
     margin: 0 auto;
 }
-header{
-    margin: 0 auto;
-}
-h1{
-    align-self: start;
-}
+
 .btn-reset{
     grid-column: 1/3;
 }
@@ -41,9 +85,49 @@ h1{
     display: flex;
     flex-direction: column;
 }
-body{
-    display: flex;
-    flex-direction: column;
+.container--button{
+    grid-area: cantainer--button;
+    display: grid;
+    grid-template-columns: repeat(4,80px);
+    grid-gap:.6em;
+    border-radius: 1em;
+    justify-content: center;
+    padding:1em;
+    color:red;
     background-color: $screen-background;
-    max-width: 70%;
+}
+
+button{
+    margin:.3em .1em ;
+    padding:.3em;
+    border: none;
+    border-radius:.2em ;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: $text-light;
+    box-shadow: 2px 3px 2px $key-shadow2;
+    transition:all 200ms ease-in-out;
+
+    &:hover{
+        cursor:pointer;
+        background-color: $key-background-toggle;
+    }
+
+}
+.btn-del,
+.btn-reset{
+   background-color: $key-background;
+   color:$key-background2;
+   box-shadow: 2px 3px 2px $key-background;
+}
+.btn-equal{
+    background-color: $key-background-toggle;
+    color:$key-background2;
+    box-shadow: 2px 3px 2px $key-background-toggle;
+
+
+    &:hover{
+        background-color: $text-light;
+        color:inherit;
+    }
 }

@@ -1,36 +1,79 @@
-button {
-  font-size: 2rem;
-  margin: .1em;
-  display: inline-block;
+*,
+*::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-height: 100%;
+}
+
+html, body {
+  max-height: 100%;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #3a4764;
 }
 
 .section__button {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (100px)[4];
-      grid-template-columns: repeat(4, 100px);
+  -ms-grid-columns: 25rem;
+      grid-template-columns: 25rem;
+      grid-template-areas: "header" "input" "cantainer--button";
   margin: 0 auto;
-  max-width: 70%;
   grid-gap: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3em;
+}
+
+@media (max-width: 416px) {
+  .section__button {
+    width: 10rem;
+  }
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  margin: 0;
 }
 
 input {
   font-size: 2rem;
   margin-bottom: .1em;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: input;
+  border: none;
+  border-radius: .5em;
+  height: 2em;
+  padding: 1em;
+  background-color: #182034;
+  outline: none;
+  text-align: right;
+  color: white;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+input:hover {
+  background: rgba(24, 32, 52, 0.8);
+}
+
+input:focus {
+  outline: 2px solid;
 }
 
 .section__display {
   margin: 0 auto;
-}
-
-header {
-  margin: 0 auto;
-}
-
-h1 {
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
 }
 
 .btn-reset {
@@ -53,15 +96,60 @@ h1 {
           flex-direction: column;
 }
 
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.container--button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: cantainer--button;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (80px)[4];
+      grid-template-columns: repeat(4, 80px);
+  grid-gap: .6em;
+  border-radius: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1em;
+  color: red;
   background-color: #182034;
-  max-width: 70%;
+}
+
+button {
+  margin: .3em .1em;
+  padding: .3em;
+  border: none;
+  border-radius: .2em;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: white;
+  -webkit-box-shadow: 2px 3px 2px #b4a597;
+          box-shadow: 2px 3px 2px #b4a597;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #d03f2f;
+}
+
+.btn-del,
+.btn-reset {
+  background-color: #637097;
+  color: #eae3dc;
+  -webkit-box-shadow: 2px 3px 2px #637097;
+          box-shadow: 2px 3px 2px #637097;
+}
+
+.btn-equal {
+  background-color: #d03f2f;
+  color: #eae3dc;
+  -webkit-box-shadow: 2px 3px 2px #d03f2f;
+          box-shadow: 2px 3px 2px #d03f2f;
+}
+
+.btn-equal:hover {
+  background-color: white;
+  color: inherit;
 }
 /*# sourceMappingURL=index.css.map */
