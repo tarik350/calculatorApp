@@ -33,17 +33,75 @@ body {
   margin-top: 3em;
 }
 
-@media (max-width: 416px) {
-  .section__button {
-    width: 10rem;
-  }
-}
-
 .header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
   margin: 0;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 16px;
+}
+
+.toggle-box {
+  background-color: #182034;
+  height: 20px;
+  border-radius: 1em;
+  padding: .3em;
+  width: calc(100% + 1rem);
+  position: relative;
+  left: -.5rem;
+  padding-top: .3rem;
+}
+
+.theme-toggle {
+  position: relative;
+  left: -1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+.circle {
+  display: block;
+  height: 1.4em;
+  width: .6em;
+  position: relative;
+  margin-left: .1em;
+  border-radius: 50%;
+  background-color: #d03f2f;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.circle-position2 {
+  position: relative;
+  left: 1.5em;
 }
 
 input {

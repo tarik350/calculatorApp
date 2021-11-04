@@ -37,16 +37,74 @@ body{
 
 
 }
-@media (max-width:416px){
-    .section__button{
-        width: 10rem;
-    }
-}
 
+//hader
 .header{
     grid-area: header;
     margin: 0;
+
+    color:$text-light;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family: inherit;
+    font-weight: $fw;
+    line-height: 1.5;
 }
+
+//the toggle part
+.numbers{
+    display: flex;
+    justify-content:space-between;
+    font-size:16px;
+}
+.toggle-box{
+
+    background-color:$screen-background;
+    height:20px;
+    border-radius: 1em;
+    padding:.3em;
+    width:calc(100% + 1rem);
+    position: relative;
+    left:-.5rem;
+    padding-top:.3rem;
+
+
+
+}
+.theme-toggle{
+    position: relative;
+    left: -1em;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    align-items:end;
+
+
+}
+
+
+.circle{
+    display:block;
+    height: 1.4em;
+    width:.6em;
+    position: relative;
+
+    margin-left: .1em;
+    border-radius: 50%;
+    background-color:$key-background-toggle;
+    transition: all 200ms;
+
+
+
+}
+.circle-position2{
+    position: relative;
+    left: 1.5em;
+}
+
+
+
 input {
     font-size: 2rem;
     margin-bottom: .1em;
